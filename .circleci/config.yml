@@ -37,17 +37,19 @@ jobs:
           paths:
             - ~/.gradle
           key: v1-dependencies-{{ checksum "build.gradle" }}
-
-      # run tests!
-      - run: gradle test
-      # Saves results!
+      # Create folders for test results and artifacts!
+      - # run tests!
+      - run: gradle clean build
       - run:
-          name: Save test results
+          name: Saves tests results and artifcats
           command: |
               mkdir -p ~/test-results/junit/
               find . -type f -regex ".*/build/test-results/.*xml" -exec cp {} ~/test-results/junit/ \;
+              find . -type f -regex ".*/build/libs/sajjad_sarath_circleci*.jar" -exec cp {} ~/artifacts/ \;
           when: always
       - store_test_results:
           path: ~/test-results
       - store_artifacts:
           path: ~/test-results/junit
+      - store_artifacts:
+          path: ~/artifacts
