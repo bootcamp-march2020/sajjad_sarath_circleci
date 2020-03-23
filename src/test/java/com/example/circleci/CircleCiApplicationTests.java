@@ -13,6 +13,7 @@ class CircleCiApplicationTests {
 	@Test
 	void contextLoads() {
 		assertTrue(true);
+		fail("Fail again");
 	}
 
 }
