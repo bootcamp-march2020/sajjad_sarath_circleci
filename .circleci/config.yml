@@ -55,7 +55,7 @@ jobs:
           name: Saves artifcats
           command: |
             mkdir -p ~/artifacts/
-            cp /build/libs/sajjad_sarath_circleci*.jar ~/artifacts/
+            cp ~/build/libs/sajjad_sarath_circleci*.jar ~/artifacts/
           when: always
       - store_artifacts:
           path: ~/artifacts
