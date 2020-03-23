@@ -37,8 +37,7 @@ jobs:
           paths:
             - ~/.gradle
           key: v1-dependencies-{{ checksum "build.gradle" }}
-      # Create folders for test results and artifacts!
-      - # run tests!
+      # Test
       - run: gradle test
       # Saves tests results and artifacts
       - run:
