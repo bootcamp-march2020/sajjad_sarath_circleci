@@ -39,7 +39,8 @@ jobs:
           key: v1-dependencies-{{ checksum "build.gradle" }}
       # Create folders for test results and artifacts!
       - # run tests!
-      - run: gradle clean build
+      - run: gradle build
+      # Saves tests results and artifacts
       - run:
           name: Saves tests results and artifcats
           command: |
