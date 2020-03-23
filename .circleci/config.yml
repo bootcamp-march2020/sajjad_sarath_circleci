@@ -52,10 +52,10 @@ jobs:
           path: ~/test-results/junit
       # Saves artifacts
       - run:
-          name: Saves artifcats
+          name: Saves artifacts
           command: |
             mkdir -p ~/artifacts/
-            cp ~/build/libs/sajjad_sarath_circleci*.jar ~/artifacts/
+            find . -type f -name sajjad_sarath_circleci*.jar -exec cp {} ~/artifacts/ \;
           when: always
       - store_artifacts:
-          path: ~/artifacts
+          path: ~/artifacts/
