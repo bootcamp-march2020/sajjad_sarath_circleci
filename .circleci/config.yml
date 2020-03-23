@@ -44,6 +44,7 @@ jobs:
           name: Saves tests results and artifcats
           command: |
               mkdir -p ~/test-results/junit/
+              mkdir ~/artifacts/
               find . -type f -regex ".*/build/test-results/.*xml" -exec cp {} ~/test-results/junit/ \;
               find . -type f -regex ".*/build/libs/sajjad_sarath_circleci*.jar" -exec cp {} ~/artifacts/ \;
           when: always
