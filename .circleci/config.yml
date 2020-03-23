@@ -38,7 +38,7 @@ jobs:
             - ~/.gradle
           key: v1-dependencies-{{ checksum "build.gradle" }}
       # Test
-      - run: gradle test
+      - run: gradle build
       # Saves tests results and artifacts
       - run:
           name: Saves tests results and artifcats
